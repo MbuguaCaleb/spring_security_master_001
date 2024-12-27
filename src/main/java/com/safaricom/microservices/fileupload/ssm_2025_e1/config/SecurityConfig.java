@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -21,6 +20,7 @@ public class SecurityConfig {
     //HttpSecurity is already autoconfigured by SpringBoot
     //we inject the preconfigured HttpSecurity bean out of the Box
     //with the HttpSecurity we Build the filter which endsUp as a security Filter Chain
+    @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
 
         //Configuring the filterChain we need through the HttpSecurity Object
